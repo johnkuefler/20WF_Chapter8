@@ -15,6 +15,39 @@ public class Main {
 
     public static void main(String[] args) {
 
+        DayOfTheWeek today = DayOfTheWeek.Thursday;
+        if (today == DayOfTheWeek.Friday) {
+            System.out.println("YAYYYYY");
+        } else {
+            System.out.println("SAD");
+        }
+        
+        System.out.println(today);
+        System.out.println(today.ordinal());
+
+        
+        switch(today) {
+            case Monday:
+                System.out.println("Sad");
+                break;
+            case Tuesday:
+                System.out.println("Better");
+                break;
+            case Wednesday:
+                System.out.println("Even Better");
+                break;      
+                // cases for the rest of the days
+        }
+        
+        
+        // prone to mistakes
+        String todayAsString = "thursday";
+        if (todayAsString == "Friday ") {
+            System.out.println("YAYYYYY");
+        } else {
+            System.out.println("SAD");
+        }
+
         Random myRandom = new Random();
         double myRandomNumber = myRandom.nextDouble();
 
@@ -25,20 +58,31 @@ public class Main {
         myRect.setLength(10);
         myRect.setWidth(10);
 
-        System.out.println(myRect);
-        
+        Rectangle myRect2 = new Rectangle();
+        myRect2.setLength(10);
+        myRect2.setWidth(10);
+
+        // don't do this
+        // boolean areEqual = myRect2 == myRect;
+        boolean areEqual = myRect2.equals(myRect);
+
         System.out.println(myRect);
 
-        double area = GetArea(myRect);
-
         System.out.println(myRect);
 
+        Rectangle rectToGetArea = new Rectangle(myRect);
+        double area = GetArea(rectToGetArea);
+
+        System.out.println(myRect);
     }
 
     public static double GetArea(Rectangle rect) {
+        if (rect != null) {
+            rect.setLength(50);
 
-        rect.setLength(50);
-
-        return rect.getLength() * rect.getWidth();
+            return rect.getLength() * rect.getWidth();
+        } else {
+            return 0;
+        }
     }
 }

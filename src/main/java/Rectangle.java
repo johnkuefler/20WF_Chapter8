@@ -12,6 +12,13 @@ public class Rectangle {
     private double length;
     private double width;
 
+    public Rectangle() {}
+    
+    public Rectangle(Rectangle r) {
+        this.length = r.getLength();
+        this.width = r.getWidth();
+    }
+    
     public double getLength() {
         return length;
     }
@@ -32,4 +39,12 @@ public class Rectangle {
     public String toString() {
         return "Rectangle{" + "length=" + length + ", width=" + width + '}';
     }
+    
+    
+    public boolean equals(Rectangle r) {
+        return this.getLength() == r.getLength() && this.getWidth() == r.getWidth();
+    }
+
+
+   
 }

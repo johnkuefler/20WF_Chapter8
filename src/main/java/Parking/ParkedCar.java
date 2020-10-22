@@ -16,6 +16,10 @@ public class ParkedCar {
     private String licenseNumber;
     private int numberOfMinutesParked;
 
+    public ParkedCar() {
+        
+    }
+    
     public ParkedCar(String make, String model, String color, String licenseNumber, int numberOfMinutesParked) {
         this.make = make;
         this.model = model;
